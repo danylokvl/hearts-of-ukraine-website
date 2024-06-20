@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ArrowButton from "./components/ui/ArrowButton/ArrowButton";
+import ChipButton from "./components/ui/ChipButton/ChipButton";
+import PrimaryButton from "./components/ui/PrimaryButton/PrimaryButton";
+import arrow from "./assets/icons/arrow-button-right-24px-blue.svg";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <PrimaryButton>ВНЕСТИ КОШТИ</PrimaryButton>
+      <ArrowButton arrowTo="left"></ArrowButton>
+      <ChipButton text="Arrow" img={arrow} alt="arrow" />
+    </>
   );
 }
-
 export default App;

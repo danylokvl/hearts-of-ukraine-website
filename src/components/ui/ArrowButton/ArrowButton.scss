@@ -1,0 +1,14 @@
+@use "../../../input.scss";
+@use "../../../variables.scss";
+@use "../../../mixins.scss";
+
+.arrowButton {
+  padding: 8px 10px 6px 10px;
+  border-radius: 200px;
+  background-color: unset;
+  border: 1px solid variables.$color-1;
+  &:hover {
+    background-color: variables.$color-2;
+    border-color: variables.$color-2;
+  }
+}

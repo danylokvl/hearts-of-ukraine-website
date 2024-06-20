@@ -4,9 +4,9 @@
   border: 0;
   box-sizing: border-box;
   font: inherit;
-}
-*::-webkit-scrollbar {
-  display: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 article,
@@ -22,7 +22,6 @@ nav,
 section {
   display: block;
 }
-
 body {
   min-width: 100vw;
   min-height: 100vh;
@@ -60,4 +59,6 @@ h4 {
   font-size: 12px;
 }
 
-/*# sourceMappingURL=App.css.map */
+button {
+  cursor: pointer;
+}

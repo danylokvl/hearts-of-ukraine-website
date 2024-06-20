@@ -1,0 +1,17 @@
+@use "../../../input.scss";
+@use "../../../variables.scss";
+@use "../../../mixins.scss";
+
+.primaryButton {
+  padding: 12px 32px;
+  background-color: variables.$color-1;
+  color: variables.$white;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 2px;
+  border-radius: 100px;
+  &:hover {
+    background-color: variables.$color-2;
+    color: variables.$color-1;
+  }
+}

@@ -1,0 +1,15 @@
+@use "../../../input.scss";
+@use "../../../variables.scss";
+@use "../../../mixins.scss";
+
+.chipButton {
+  padding: 6px 16px;
+  background-color: variables.$grey;
+  color: variables.$black;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 100px;
+  @include mixins.displayFlexProps;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
