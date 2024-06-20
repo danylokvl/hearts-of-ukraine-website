@@ -7,9 +7,15 @@
   background-color: variables.$grey;
   color: variables.$black;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   border-radius: 100px;
-  @include mixins.displayFlexProps;
+  @include mixins.displayFlexProps($justifyContent: unset, $alignItems: center);
+  column-gap: 4px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  color: variables.$black;
+  &:hover {
+    background-color: variables.$color-2;
+    color: variables.$color-1;
+  }
 }

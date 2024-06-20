@@ -9,7 +9,7 @@ function App() {
     <>
       <PrimaryButton>ВНЕСТИ КОШТИ</PrimaryButton>
       <ArrowButton arrowTo="left"></ArrowButton>
-      <ChipButton text="Arrow" img={arrow} alt="arrow" />
+      <ChipButton text="Arrow" iconSrc={arrow} />
     </>
   );
 }
