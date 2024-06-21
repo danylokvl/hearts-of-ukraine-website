@@ -7,7 +7,7 @@
   background-color: variables.$color-1;
   color: variables.$white;
   font-weight: 600;
-  font-size: 14px;
+  font-size: variables.$text-size-bigger;
   letter-spacing: 2px;
   border-radius: 100px;
   &:hover {

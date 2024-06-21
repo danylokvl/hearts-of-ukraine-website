@@ -1,0 +1,56 @@
+@use "../../variables.scss";
+@use "../../mixins.scss";
+
+header {
+  padding: 12px 0px;
+  background-color: variables.$white;
+  width: 100%;
+  position: sticky;
+  .header__nav {
+    @include mixins.displayFlexProps(row, center, space-between);
+    .header__burgerMenuButton {
+      display: none;
+    }
+    ul.header__linksList {
+      list-style: none;
+      @include mixins.displayFlexProps(row, center, unset);
+      column-gap: 44px;
+      li {
+        a {
+          font-size: variables.$text-size-normal;
+          font-weight: 600;
+          &:hover {
+            color: variables.$color-1;
+          }
+        }
+      }
+    }
+    .header__buttonsContainer {
+      @include mixins.displayFlexProps(row, center, unset);
+      column-gap: 44px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  header {
+    padding: 12px 20px;
+    .header__nav {
+      .header__logo {
+        margin: 0 auto;
+      }
+      .header__burgerMenuButton {
+        width: 24px;
+        height: 24px;
+        display: block;
+        background-color: unset;
+      }
+      ul.header__linksList {
+        display: none;
+      }
+      .header__buttonsContainer {
+        display: none;
+      }
+    }
+  }
+}

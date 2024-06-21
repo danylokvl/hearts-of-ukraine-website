@@ -1,0 +1,12 @@
+@use "../../../variables.scss";
+@use "../../../mixins.scss";
+
+.textButton {
+  background-color: unset;
+  @include mixins.displayFlexProps(row, center, unset);
+  column-gap: 4px;
+  span {
+    font-size: variables.$text-size-normal;
+    font-weight: 500;
+  }
+}
