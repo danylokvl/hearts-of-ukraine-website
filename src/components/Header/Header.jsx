@@ -7,16 +7,18 @@ import languageIcon from "../../assets/icons/language-24px-black.svg";
 import burgerMenuIcon from "../../assets/icons/burger-menu-24px-black.svg";
 import closeIcon from "../../assets/icons/close-24px-black.svg";
 import TextButton from "../ui/TextButton/TextButton";
+import MobileNav from "../MobileNav/MobileNav";
 
 const Header = () => {
-  const [burgerMenuIsOpen, setburgerMenuIsOpen] = useState(false);
+  const [burgerMenuIsOpen, setBurgerMenuIsOpen] = useState(false);
 
   return (
     <header>
+      <MobileNav burgerMenuIsOpen={burgerMenuIsOpen} setBurgerMenuIsOpen={setBurgerMenuIsOpen} />
       <nav className="header__nav">
         <button
           className="header__burgerMenuButton"
-          onClick={() => setburgerMenuIsOpen(!burgerMenuIsOpen)}
+          onClick={() => setBurgerMenuIsOpen(!burgerMenuIsOpen)}
         >
           <img src={burgerMenuIsOpen ? closeIcon : burgerMenuIcon} />
         </button>
@@ -45,7 +47,9 @@ const Header = () => {
         </ul>
         <div className="header__buttonsContainer">
           <PrimaryButton>Внести Кошти</PrimaryButton>
-          <TextButton iconSrc={languageIcon}>UKR</TextButton>
+          <TextButton iconSrc={languageIcon} color="#303030">
+            UKR
+          </TextButton>
         </div>
       </nav>
     </header>

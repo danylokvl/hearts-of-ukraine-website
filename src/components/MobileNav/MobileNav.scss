@@ -1,0 +1,51 @@
+@use "../../variables.scss";
+@use "../../mixins.scss";
+
+.mobileNav {
+  display: none;
+  position: absolute;
+  padding: 12px 20px;
+  top: 0px;
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+  background-color: variables.$color-1;
+  height: 100vh;
+  .textButton {
+    span {
+      color: variables.$white;
+    }
+  }
+
+  ul {
+    @include mixins.displayFlexProps(column, flex-start, unset);
+    list-style: none;
+    row-gap: 44px;
+    margin-bottom: 44px;
+    li {
+      a {
+        color: variables.$white;
+        &:hover {
+          color: variables.$color-2;
+        }
+      }
+    }
+  }
+  .header__buttonsContainer {
+    @include mixins.displayFlexProps(column, center, unset);
+    row-gap: 44px;
+    .primaryButton {
+      background-color: variables.$color-2;
+      color: variables.$color-1;
+      &:hover {
+        background-color: variables.$white;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .mobileNav {
+    display: block;
+    left: -100%;
+  }
+}
