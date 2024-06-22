@@ -47,7 +47,11 @@ const Header = () => {
         </ul>
         <div className="header__buttonsContainer">
           <PrimaryButton>Внести Кошти</PrimaryButton>
-          <TextButton iconSrc={languageIcon} color="#303030">
+          <TextButton
+            iconSrc={languageIcon}
+            color="#303030"
+            additionalStyles={{ paddingTop: "2px" }}
+          >
             UKR
           </TextButton>
         </div>

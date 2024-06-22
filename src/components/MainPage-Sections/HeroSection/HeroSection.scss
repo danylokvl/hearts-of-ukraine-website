@@ -1,0 +1,17 @@
+@use "../../../mixins.scss";
+@use "../../../variables.scss";
+
+.heroSection {
+  .heroSection__content {
+    width: 100vw;
+    height: 90vh;
+    background-color: aqua;
+    position: absolute;
+    left: -5vw;
+    .heroSection__imagesContainer {
+    }
+    @media (max-width: 1024px) {
+      left: 0px;
+    }
+  }
+}
