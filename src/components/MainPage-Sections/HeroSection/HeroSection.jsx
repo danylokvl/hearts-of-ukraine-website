@@ -8,9 +8,9 @@ const HeroSection = () => {
     <section className="heroSection">
       <div className="heroSection__content">
         <div className="heroSection__imagesContainer">
-          <img src={img1} alt="kid image" />
-          <img src={img2} alt="soldier image" />
-          <img src={img3} alt="woman image" />
+          <img src={img1} alt="kid image" id="kidImage" />
+          <img src={img2} alt="soldier image" id="soldierImage" />
+          <img src={img3} alt="woman image" id="womanImage" />
         </div>
         <div className="heroSection__h1Container">
           <h1>Разом заради життя та перемоги</h1>

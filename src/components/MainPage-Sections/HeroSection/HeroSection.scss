@@ -2,24 +2,27 @@
 @use "../../../variables.scss";
 
 .heroSection {
-  position: relative;
-  height: 90vh;
+  width: 100vw;
+  height: fit-content;
   .heroSection__content {
     width: 100vw;
-    height: inherit;
-    position: absolute;
-    left: -5vw;
+    height: fit-content;
+    z-index: -4;
+    transform: translateX(-5vw);
     .heroSection__imagesContainer {
+      height: auto;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr;
+
       img {
         width: 100%;
       }
     }
     .heroSection__h1Container {
       position: absolute;
-      top: 50%;
+      top: 0;
+      height: 100%;
       width: 100vw;
       @include mixins.displayFlexProps(row, center, center);
       h1 {
@@ -32,8 +35,62 @@
         width: fit-content;
       }
     }
-    @media (max-width: 1024px) {
-      left: 0px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .heroSection {
+    .heroSection__content {
+      transform: translateX(0vw);
+      .heroSection__imagesContainer {
+      }
+      .heroSection__h1Container {
+        h1 {
+          padding: 24px 64px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    .heroSection__content {
+      .heroSection__imagesContainer {
+        grid-template-columns: 1fr;
+        #soldierImage,
+        #womanImage {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .heroSection {
+    .heroSection__content {
+      .heroSection__imagesContainer {
+      }
+      .heroSection__h1Container {
+        h1 {
+          padding: 16px 20px;
+          font-size: 20px;
+          white-space: wrap;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .heroSection {
+    .heroSection__content {
+      .heroSection__h1Container {
+        h1 {
+          padding: 16px 10px;
+        }
+      }
     }
   }
 }
