@@ -2,13 +2,35 @@
 @use "../../../variables.scss";
 
 .heroSection {
+  position: relative;
+  height: 90vh;
   .heroSection__content {
     width: 100vw;
-    height: 90vh;
-    background-color: aqua;
+    height: inherit;
     position: absolute;
     left: -5vw;
     .heroSection__imagesContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      img {
+        width: 100%;
+      }
+    }
+    .heroSection__h1Container {
+      position: absolute;
+      top: 50%;
+      width: 100vw;
+      @include mixins.displayFlexProps(row, center, center);
+      h1 {
+        display: block;
+        background-color: variables.$white;
+        padding: 32px 100px;
+        white-space: nowrap;
+        font-weight: 500;
+        text-align: center;
+        width: fit-content;
+      }
     }
     @media (max-width: 1024px) {
       left: 0px;

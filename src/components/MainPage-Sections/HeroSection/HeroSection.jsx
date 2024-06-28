@@ -12,6 +12,9 @@ const HeroSection = () => {
           <img src={img2} alt="soldier image" />
           <img src={img3} alt="woman image" />
         </div>
+        <div className="heroSection__h1Container">
+          <h1>Разом заради життя та перемоги</h1>
+        </div>
       </div>
     </section>
   );
