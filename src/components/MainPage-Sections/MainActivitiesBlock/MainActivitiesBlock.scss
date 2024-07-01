@@ -2,9 +2,10 @@
 @use "../../../variables.scss";
 
 .mainActivitiesBlock {
-  padding: 120px 40px;
+  padding: 120px 0px 120px 0px;
   background-color: variables.$color-1;
   position: relative;
+  text-align: center;
   &::before {
     content: "";
     position: absolute;
@@ -18,14 +19,110 @@
   }
   .mainActivitiesBlock__content {
     .mainActivitiesBlock__cardsContainer {
-      @include mixins.displayFlexProps(row, center, unset);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      column-gap: 20px;
+      overflow: hidden;
       .mainActivitiesBlock__card {
+        cursor: pointer;
+        padding-top: 20px;
+        background-color: variables.$white;
+        width: 100%;
+        height: 300px;
+        @include mixins.displayFlexProps(column, space-between, center);
+        transition: background-color 0.5s ease;
         .textContainer {
+          padding: 0px 28px;
           color: variables.$black;
+          text-align: center;
 
           h3 {
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 16px;
           }
+          p {
+            font-weight: normal;
+            font-size: 18px;
+          }
+        }
+        button {
+          margin-top: auto;
+          background-color: variables.$color-2;
+          padding: 24px;
+          width: 100%;
+          @include mixins.displayFlexProps(row, center, center);
+          column-gap: 8px;
           span {
+            color: variables.$black;
+            font-size: 20px;
+            font-weight: 500;
+          }
+          &:hover {
+            span {
+              color: variables.$color-1;
+            }
+          }
+        }
+        &:hover {
+          background-color: variables.$color-2;
+          button {
+            background-color: variables.$white;
+            span {
+              color: variables.$color-1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .mainActivitiesBlock {
+    .mainActivitiesBlock__content {
+      padding: 0 44px;
+      .mainActivitiesBlock__cardsContainer {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        row-gap: 44px;
+        .mainActivitiesBlock__card {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .mainActivitiesBlock {
+    padding: 80px 0 80px 0;
+    .mainActivitiesBlock__content {
+      padding: 0px;
+      .mainActivitiesBlock__cardsContainer {
+        .mainActivitiesBlock__card {
+          .textContainer {
+            h3 {
+            }
+            span {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .mainActivitiesBlock {
+    .mainActivitiesBlock__content {
+      .mainActivitiesBlock__cardsContainer {
+        .mainActivitiesBlock__card {
+          .textContainer {
+            p {
+              font-size: 16px;
+            }
           }
         }
       }
