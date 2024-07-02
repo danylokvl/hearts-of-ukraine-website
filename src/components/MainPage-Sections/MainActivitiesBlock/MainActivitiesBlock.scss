@@ -17,6 +17,23 @@
     transform: translateX(-50%);
     z-index: -10;
   }
+
+  &::after {
+    content: "";
+    background-image: url(../../../assets/images/background-image-divider.jpg);
+    background-size: cover;
+    height: 150px;
+    width: 100vw;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    @media (max-width: 426px) {
+      height: 6%;
+      transform: translateX(0);
+      left: 0;
+    }
+  }
   .mainActivitiesBlock__content {
     .mainActivitiesBlock__cardsContainer {
       display: grid;
@@ -31,7 +48,12 @@
         width: 100%;
         height: 300px;
         @include mixins.displayFlexProps(column, space-between, center);
-        transition: background-color 0.5s ease;
+
+        &,
+        button {
+          transition: background-color 0.2s ease-in-out;
+        }
+
         .textContainer {
           padding: 0px 28px;
           color: variables.$black;

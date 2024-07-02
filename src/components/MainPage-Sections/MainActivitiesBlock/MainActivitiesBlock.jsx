@@ -5,6 +5,7 @@ import "./MainActivitiesBlock.scss";
 import moneyIcon from "../../../assets/icons/money-24px-black.svg";
 import handHeartIcon from "../../../assets/icons/heart-hand-24px-black.svg";
 import shieldHeartIcon from "../../../assets/icons/shield-heart-24px-black.svg";
+import imageDivider from "../../../assets/images/background-image-divider.jpg";
 
 const MainActivitiesBlock = () => {
   const [cardIsHovered, setCardIsHovered] = useState({
@@ -17,7 +18,15 @@ const MainActivitiesBlock = () => {
     <section className="mainActivitiesBlock">
       <div className="mainActivitiesBlock__content">
         <div className="mainActivitiesBlock__cardsContainer">
-          <div className="mainActivitiesBlock__card">
+          <div
+            className="mainActivitiesBlock__card"
+            onMouseEnter={() =>
+              setCardIsHovered((prevState) => ({ ...prevState, moneyCard: true }))
+            }
+            onMouseLeave={() =>
+              setCardIsHovered((prevState) => ({ ...prevState, moneyCard: false }))
+            }
+          >
             <div className="textContainer">
               <h3>Підтримайте нас фінансово</h3>
               <p>
@@ -25,14 +34,7 @@ const MainActivitiesBlock = () => {
                 хто цього потребує.
               </p>
             </div>
-            <button
-              onMouseEnter={() =>
-                setCardIsHovered((prevState) => ({ ...prevState, moneyCard: true }))
-              }
-              onMouseLeave={() =>
-                setCardIsHovered((prevState) => ({ ...prevState, moneyCard: false }))
-              }
-            >
+            <button>
               <span>Внести Кошти</span>
               <ReactSVG
                 style={{ width: "24px", height: "24px", transform: "translateY(5px)" }}
@@ -45,22 +47,23 @@ const MainActivitiesBlock = () => {
               />
             </button>
           </div>
-          <div className="mainActivitiesBlock__card">
+          <div
+            className="mainActivitiesBlock__card"
+            onMouseEnter={() =>
+              setCardIsHovered((prevState) => ({ ...prevState, volunteerCard: true }))
+            }
+            onMouseLeave={() =>
+              setCardIsHovered((prevState) => ({ ...prevState, volunteerCard: false }))
+            }
+          >
             <div className="textContainer">
-              <h3>Станьте одним із нас</h3>
+              <h3>Станьте одним з нас</h3>
               <p>
                 Ми постачаємо гуманітарну допомогу, щоб врятувати життя українців та допомагаємо
                 нашим воїнам захищати Україну.
               </p>
             </div>
-            <button
-              onMouseEnter={() =>
-                setCardIsHovered((prevState) => ({ ...prevState, volunteerCard: true }))
-              }
-              onMouseLeave={() =>
-                setCardIsHovered((prevState) => ({ ...prevState, volunteerCard: false }))
-              }
-            >
+            <button>
               <span>Стати Волонтером</span>
               <ReactSVG
                 style={{ width: "24px", height: "24px" }}
@@ -73,19 +76,20 @@ const MainActivitiesBlock = () => {
               />
             </button>
           </div>
-          <div className="mainActivitiesBlock__card">
+          <div
+            className="mainActivitiesBlock__card"
+            onMouseEnter={() =>
+              setCardIsHovered((prevState) => ({ ...prevState, needHelpCard: true }))
+            }
+            onMouseLeave={() =>
+              setCardIsHovered((prevState) => ({ ...prevState, needHelpCard: false }))
+            }
+          >
             <div className="textContainer">
               <h3>Ми вас підтримаємо</h3>
               <p>Наші волонтери завжди прийдуть на поміч тим, хто цього потребує</p>
             </div>
-            <button
-              onMouseEnter={() =>
-                setCardIsHovered((prevState) => ({ ...prevState, needHelpCard: true }))
-              }
-              onMouseLeave={() =>
-                setCardIsHovered((prevState) => ({ ...prevState, needHelpCard: false }))
-              }
-            >
+            <button>
               <span>Отримати Допомогу</span>
               <ReactSVG
                 style={{ width: "24px", height: "24px", transform: "translateY(2px)" }}
