@@ -33,6 +33,9 @@
       transform: translateX(0);
       left: 0;
     }
+    @media (min-width: 2559px) {
+      height: 300px;
+    }
   }
   .mainActivitiesBlock__content {
     .mainActivitiesBlock__cardsContainer {
