@@ -2,10 +2,7 @@
 @use "../../../mixins.scss";
 
 .aboutUsSection {
-  @media (min-width: 2559px) {
-    padding: 500px 0 0 0;
-  }
-
+  position: relative;
   .aboutUsSection__content {
     h2,
     p {
@@ -31,7 +28,39 @@
         font-weight: 400;
       }
       .aboutUsSection__imagesContainer {
+        padding-top: 40px;
+        @include mixins.displayFlexProps(row, flex-end, flex-start);
+        flex-wrap: nowrap;
+        column-gap: 20px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        position: absolute;
+        width: 110vw;
+        top: 100%;
+        left: -10vw;
+        img {
+          height: 40vh;
+        }
       }
     }
+  }
+}
+
+@media (min-width: 1440px) {
+  .aboutUsSection {
+    padding-top: 450px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .aboutUsSection {
+    padding-top: 350px;
+  }
+}
+
+@media (max-width: 425px) {
+  .aboutUsSection {
+    padding-top: 200px;
   }
 }

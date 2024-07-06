@@ -1,4 +1,21 @@
 import "./AboutUsSection.scss";
+import girlNearTankImage from "../../../assets/images/girl-near-tank.jpg";
+import ruinsImage from "../../../assets/images/ruins.jpg";
+import strikeImage from "../../../assets/images/strike.jpg";
+import damagedTankImage from "../../../assets/images/damaged-tank.jpg";
+import damagedTankImage2 from "../../../assets/images/damaged-tank-2.jpg";
+
+const handleImagesContainerScroll = (event) => {
+  document.body.style.overflowY = "hidden";
+  const container = document.querySelector(".aboutUsSection__imagesContainer");
+  let scrollAmount = container.scrollLeft + event.deltaY;
+
+  container.scroll({
+    top: 0,
+    left: scrollAmount,
+    behavior: "smooth",
+  });
+};
 
 const AboutUsSection = () => {
   return (
@@ -21,15 +38,27 @@ const AboutUsSection = () => {
           </p>
         </div>
         <div className="aboutUsSection__bottomContainer">
-          <h3>Допомагаючи сьогодні, ми будуємо краще завтра</h3>
+          <h3>Ми захищаємо світ від тиранії</h3>
           <p>
-            Росія вторглася в Україну. Ми захищаємо світ від тиранії, тож зараз час показати вашу
-            підтримку заради свободи та демократії в Україні та в усьому світі. Війна торкнулася
-            кожного українця, зруйнувала міста та села, залишила тисячі людей без дому, їжі,
-            медикаментів та базових засобів для життя. У цій ситуації благодійні фонди стають
-            справжнім рятівним кругом для тих, хто потребує допомоги.
+            Росія вторглася в Україну, тож зараз час показати вашу підтримку заради свободи та
+            демократії в Україні та в усьому світі. Війна торкнулася кожного українця, зруйнувала
+            міста та села, залишила тисячі людей без дому, їжі, медикаментів та базових засобів для
+            життя. У цій ситуації благодійні фонди стають справжнім рятівним кругом для тих, хто
+            потребує допомоги.
           </p>
-          <div className="aboutUsSection__imagesContainer"></div>
+          <div
+            className="aboutUsSection__imagesContainer"
+            onWheel={handleImagesContainerScroll}
+            onMouseLeave={() => {
+              document.body.style.overflowY = "auto";
+            }}
+          >
+            <img src={girlNearTankImage} alt="girl near damaged tank" />
+            <img src={ruinsImage} alt="ruins" />
+            <img src={strikeImage} alt="strike" />
+            <img src={damagedTankImage} alt="damaged tank" />
+            <img src={damagedTankImage2} alt="damaged tank" />
+          </div>
         </div>
       </div>
     </section>
