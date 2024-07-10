@@ -27,20 +27,26 @@
       h3 {
         font-weight: 400;
       }
-      .aboutUsSection__imagesContainer {
-        padding-top: 40px;
-        @include mixins.displayFlexProps(row, flex-end, flex-start);
-        flex-wrap: nowrap;
-        column-gap: 20px;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        scroll-behavior: smooth;
-        position: absolute;
-        width: 110vw;
-        top: 100%;
+      .aboutUsSection__horizontalScrollContainer {
+        position: relative;
+        transform: translateX(-10vw);
+        width: 120vw;
+        overflow-x: visible;
+        right: -10vw;
         left: -10vw;
-        img {
-          height: 40vh;
+        @include mixins.displayFlexProps(row, center, flex-start);
+        column-gap: 20px;
+        .aboutUsSection__imagesContainer {
+          padding-top: 40px;
+          @include mixins.displayFlexProps(row, flex-end, flex-start);
+          flex-wrap: nowrap;
+          column-gap: 20px;
+          transition: transform 5s ease-out;
+          img {
+            height: 40vh;
+          }
+          &:last-child {
+          }
         }
       }
     }

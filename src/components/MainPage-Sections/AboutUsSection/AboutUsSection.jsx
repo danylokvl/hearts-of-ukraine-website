@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./AboutUsSection.scss";
 import girlNearTankImage from "../../../assets/images/girl-near-tank.jpg";
 import ruinsImage from "../../../assets/images/ruins.jpg";
@@ -5,19 +6,45 @@ import strikeImage from "../../../assets/images/strike.jpg";
 import damagedTankImage from "../../../assets/images/damaged-tank.jpg";
 import damagedTankImage2 from "../../../assets/images/damaged-tank-2.jpg";
 
-const handleImagesContainerScroll = (event) => {
-  document.body.style.overflowY = "hidden";
-  const container = document.querySelector(".aboutUsSection__imagesContainer");
-  let scrollAmount = container.scrollLeft + event.deltaY;
-
-  container.scroll({
-    top: 0,
-    left: scrollAmount,
-    behavior: "smooth",
-  });
-};
+const imagesArray = [
+  girlNearTankImage,
+  ruinsImage,
+  strikeImage,
+  damagedTankImage,
+  damagedTankImage2,
+];
 
 const AboutUsSection = () => {
+  useEffect(() => {
+    const imagesContainers = document.querySelectorAll(".aboutUsSection__imagesContainer");
+    let translateXAmount = 0;
+    const imagesContainerWidth = imagesContainers[0].getBoundingClientRect().width;
+    const firstImagesContainerRight = imagesContainers[0].getBoundingClientRect().right;
+    const secondImagesContainerRight = imagesContainers[1].getBoundingClientRect().right;
+
+    function MoveImagesHorizontal() {
+      imagesContainers[0].style.transform = `translateX(-${translateXAmount}px)`;
+      imagesContainers[1].style.transform = `translateX(-${translateXAmount}px)`;
+      translateXAmount += 100;
+
+      if (imagesContainers[0].getBoundingClientRect().right <= 0) {
+        imagesContainers[0].setAttribute(
+          "style",
+          "transition: all 0s; transform: translateX(120vw)"
+        );
+        setTimeout(() => {
+          imagesContainers[0].removeAttribute("style");
+        }, 1000);
+      } else if (imagesContainers[0].getBoundingClientRect().right <= 0) {
+        imagesContainers[1].style.transform = `translateX(${imagesContainerWidth}px)`;
+      }
+    }
+
+    setInterval(MoveImagesHorizontal, 1000);
+
+    return () => clearInterval();
+  }, []);
+
   return (
     <section className="aboutUsSection">
       <div className="aboutUsSection__content">
@@ -46,18 +73,21 @@ const AboutUsSection = () => {
             життя. У цій ситуації благодійні фонди стають справжнім рятівним кругом для тих, хто
             потребує допомоги.
           </p>
-          <div
-            className="aboutUsSection__imagesContainer"
-            onWheel={handleImagesContainerScroll}
-            onMouseLeave={() => {
-              document.body.style.overflowY = "auto";
-            }}
-          >
-            <img src={girlNearTankImage} alt="girl near damaged tank" />
-            <img src={ruinsImage} alt="ruins" />
-            <img src={strikeImage} alt="strike" />
-            <img src={damagedTankImage} alt="damaged tank" />
-            <img src={damagedTankImage2} alt="damaged tank" />
+          <div className="aboutUsSection__horizontalScrollContainer">
+            <div className="aboutUsSection__imagesContainer">
+              {imagesArray.map((image, index) => {
+                return (
+                  <img src={image} alt={`image ${index}`} key={index + Math.random() * 1000} />
+                );
+              })}
+            </div>
+            <div className="aboutUsSection__imagesContainer">
+              {imagesArray.map((image, index) => {
+                return (
+                  <img src={image} alt={`image ${index}`} key={index + Math.random() * 1000} />
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
