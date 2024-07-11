@@ -15,7 +15,7 @@ const imagesArray = [
 ];
 
 const AboutUsSection = () => {
-  useEffect(() => {
+  /* useEffect(() => {
     const imagesContainers = document.querySelectorAll(".aboutUsSection__imagesContainer");
     let translateXAmount = 0;
     const imagesContainerWidth = imagesContainers[0].getBoundingClientRect().width;
@@ -43,7 +43,7 @@ const AboutUsSection = () => {
     setInterval(MoveImagesHorizontal, 1000);
 
     return () => clearInterval();
-  }, []);
+  }, []);*/
 
   return (
     <section className="aboutUsSection">
@@ -82,11 +82,11 @@ const AboutUsSection = () => {
               })}
             </div>
             <div className="aboutUsSection__imagesContainer">
-              {imagesArray.map((image, index) => {
+              {/*imagesArray.map((image, index) => {
                 return (
                   <img src={image} alt={`image ${index}`} key={index + Math.random() * 1000} />
                 );
-              })}
+              })*/}
             </div>
           </div>
         </div>

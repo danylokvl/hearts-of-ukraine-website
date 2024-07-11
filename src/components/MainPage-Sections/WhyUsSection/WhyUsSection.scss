@@ -1,0 +1,55 @@
+@use "../../../variables.scss";
+@use "../../../mixins.scss";
+
+.whyUsSection {
+  padding: 150px 0 0 0;
+  .whyUsSection__content {
+    @include mixins.displayFlexProps(column, unset, space-between);
+    row-gap: 64px;
+    h3,
+    h4,
+    p {
+      color: variables.$black;
+    }
+    padding: 64px 0 0 0;
+    h3 {
+      font-weight: 500;
+    }
+    .whyUsSection__featureContainer {
+      @include mixins.displayFlexProps(row, center, unset);
+      column-gap: 132px;
+      span {
+        font-size: 90px;
+        color: variables.$color-1;
+        font-weight: 700;
+      }
+      .whyUsSection__featureTextContaienr {
+        max-height: 123px;
+        h4 {
+          font-weight: 500;
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .whyUsSection {
+    padding: 100px 5vw 0 5vw;
+    .whyUsSection__content {
+      .whyUsSection__featureContainer {
+        @include mixins.displayFlexProps(column, flex-start, unset);
+        span {
+        }
+        .whyUsSection__featureTextContaienr {
+          max-height: none;
+        }
+      }
+    }
+  }
+}
