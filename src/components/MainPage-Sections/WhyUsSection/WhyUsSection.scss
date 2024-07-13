@@ -38,9 +38,16 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .whyUsSection {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .whyUsSection {
-    padding: 100px 5vw 0 5vw;
+    padding-top: 100px;
     .whyUsSection__content {
       .whyUsSection__featureContainer {
         @include mixins.displayFlexProps(column, flex-start, unset);

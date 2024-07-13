@@ -31,19 +31,24 @@
         position: relative;
         transform: translateX(-10vw);
         width: 120vw;
+        height: 40vh;
         overflow-x: hidden; //change later
         right: -10vw;
         left: -10vw;
         @include mixins.displayFlexProps(row, center, flex-start);
         column-gap: 20px;
         .aboutUsSection__imagesContainer {
+          position: absolute;
+          width: 100%;
+          height: fit-content;
           padding-top: 40px;
+          height: 100%;
           @include mixins.displayFlexProps(row, flex-end, flex-start);
           flex-wrap: nowrap;
           column-gap: 20px;
           transition: transform 5s ease-out;
           img {
-            height: 40vh;
+            max-height: 100%;
           }
           &:last-child {
           }
@@ -61,7 +66,7 @@
 
 @media (max-width: 1024px) {
   .aboutUsSection {
-    padding-top: 350px;
+    padding: 350px 20px 0 20px;
   }
 }
 

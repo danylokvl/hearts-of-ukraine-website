@@ -1,0 +1,152 @@
+@use "../../../variables.scss";
+@use "../../../mixins.scss";
+
+.vacanciesSection {
+  padding: 200px 0;
+  h3 {
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: variables.$black;
+  }
+  .vacanciesSection__content {
+    @include mixins.displayFlexProps(column, flex-start, unset);
+    row-gap: 40px;
+
+    span,
+    li {
+      color: variables.$black;
+    }
+    .vacanciesSection__vacancyContainer {
+      position: relative;
+      @include mixins.displayFlexProps(row, center, unset);
+      width: 100%;
+      height: 160px;
+      &:first-child {
+        height: 210px;
+      }
+      img {
+        margin-right: 140px;
+      }
+      &:last-child {
+        img {
+          margin-right: 124px;
+        }
+      }
+      span {
+        margin-right: auto;
+        font-size: 40px;
+        font-weight: 500;
+        width: fit-content;
+      }
+      .vacanciesSection__specializationsContainer {
+        ul {
+          list-style: none;
+          @include mixins.displayFlexProps(column, flex-end, unset);
+          row-gap: 12px;
+          li {
+            font-size: 16px;
+            font-weight: 400;
+            white-space: nowrap;
+          }
+        }
+      }
+      &::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: variables.$black;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .vacanciesSection {
+    padding: 200px 20px 0 20px;
+    .vacanciesSection__content {
+      row-gap: 100px;
+      h3 {
+      }
+      h3,
+      span,
+      li {
+      }
+      .vacanciesSection__vacancyContainer {
+        img {
+        }
+        span {
+        }
+        .vacanciesSection__specializationsContainer {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .vacanciesSection {
+    padding: 200px 20px 0 20px;
+    .vacanciesSection__content {
+      h3 {
+      }
+      h3,
+      span,
+      li {
+      }
+      .vacanciesSection__vacancyContainer {
+        justify-content: unset;
+        column-gap: 40px;
+        img {
+          margin: 0;
+        }
+        &:last-child {
+          img {
+            margin: 0;
+          }
+        }
+        span {
+          font-size: 28px;
+          margin: 0;
+        }
+        .vacanciesSection__specializationsContainer {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .vacanciesSection {
+    .vacanciesSection__content {
+      h3 {
+      }
+      h3,
+      span,
+      li {
+      }
+      .vacanciesSection__vacancyContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, fit-content);
+        row-gap: 40px;
+        img {
+          margin: 0;
+        }
+        span {
+          font-size: 28px;
+          margin: 0;
+        }
+        .vacanciesSection__specializationsContainer {
+          ul {
+            align-items: flex-start;
+            li {
+            }
+          }
+        }
+      }
+    }
+  }
+}
