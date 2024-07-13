@@ -9,7 +9,9 @@ const VacanciesSection = () => {
       <h3>Хто нам потрібен</h3>
       <div className="vacanciesSection__content">
         <div className="vacanciesSection__vacancyContainer">
-          <img src={medicIconBig} />
+          <div className="vacanciesSection__imageContainer">
+            <img src={medicIconBig} />
+          </div>
           <span>Медичні працівники</span>
           <div className="vacanciesSection__specializationsContainer">
             <ul>
@@ -22,7 +24,9 @@ const VacanciesSection = () => {
           </div>
         </div>
         <div className="vacanciesSection__vacancyContainer">
-          <img src={carIconBig} />
+          <div className="vacanciesSection__imageContainer">
+            <img src={carIconBig} />
+          </div>
           <span>Водії автомобілів</span>
           <div className="vacanciesSection__specializationsContainer">
             <ul>
@@ -33,7 +37,9 @@ const VacanciesSection = () => {
           </div>
         </div>
         <div className="vacanciesSection__vacancyContainer">
-          <img src={peopleIconBig} />
+          <div className="vacanciesSection__imageContainer">
+            <img src={peopleIconBig} />
+          </div>
           <span>Будь-хто небайдужий</span>
           <div className="vacanciesSection__specializationsContainer">
             <ul>
