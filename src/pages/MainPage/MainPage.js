@@ -1,4 +1,5 @@
 import AboutUsSection from "../../components/MainPage-Sections/AboutUsSection/AboutUsSection";
+import FoundersSection from "../../components/MainPage-Sections/FoundersSection/FoundersSection";
 import HeroSection from "../../components/MainPage-Sections/HeroSection/HeroSection";
 import MainActivitiesBlock from "../../components/MainPage-Sections/MainActivitiesBlock/MainActivitiesBlock";
 import VacanciesSection from "../../components/MainPage-Sections/VacanciesSection/VacanciesSection";
@@ -13,6 +14,7 @@ const MainPage = () => {
       <AboutUsSection />
       <WhyUsSection />
       <VacanciesSection />
+      <FoundersSection />
     </section>
   );
 };

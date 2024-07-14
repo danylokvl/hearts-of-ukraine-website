@@ -66,37 +66,16 @@
 
 @media (max-width: 1024px) {
   .vacanciesSection {
-    padding: 200px 20px 0 20px;
+    padding: 200px 20px;
     .vacanciesSection__content {
       row-gap: 100px;
-      h3 {
-      }
-      h3,
-      span,
-      li {
-      }
-      .vacanciesSection__vacancyContainer {
-        img {
-        }
-        span {
-        }
-        .vacanciesSection__specializationsContainer {
-        }
-      }
     }
   }
 }
 
 @media (max-width: 768px) {
   .vacanciesSection {
-    padding: 200px 20px 0 20px;
     .vacanciesSection__content {
-      h3 {
-      }
-      h3,
-      span,
-      li {
-      }
       .vacanciesSection__vacancyContainer {
         justify-content: unset;
         column-gap: 40px;
@@ -111,8 +90,7 @@
         span {
           font-size: 28px;
           margin: 0;
-        }
-        .vacanciesSection__specializationsContainer {
+          white-space: wrap;
         }
       }
     }

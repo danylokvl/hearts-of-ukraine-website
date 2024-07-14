@@ -36,6 +36,7 @@
         right: -10vw;
         left: -10vw;
         @include mixins.displayFlexProps(row, center, flex-start);
+        display: none; //change later
         column-gap: 20px;
         .aboutUsSection__imagesContainer {
           position: absolute;
