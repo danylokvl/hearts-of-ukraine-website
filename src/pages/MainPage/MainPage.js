@@ -1,4 +1,6 @@
 import AboutUsSection from "../../components/MainPage-Sections/AboutUsSection/AboutUsSection";
+import BenefactorsSection from "../../components/MainPage-Sections/BenefactorsSection/BenefactorsSection";
+import FAQSection from "../../components/MainPage-Sections/FAQSection/FAQSection";
 import FoundersSection from "../../components/MainPage-Sections/FoundersSection/FoundersSection";
 import HeroSection from "../../components/MainPage-Sections/HeroSection/HeroSection";
 import MainActivitiesBlock from "../../components/MainPage-Sections/MainActivitiesBlock/MainActivitiesBlock";
@@ -15,6 +17,8 @@ const MainPage = () => {
       <WhyUsSection />
       <VacanciesSection />
       <FoundersSection />
+      <BenefactorsSection />
+      <FAQSection />
     </section>
   );
 };

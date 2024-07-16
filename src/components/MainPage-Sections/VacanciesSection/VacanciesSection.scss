@@ -97,7 +97,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 426px) {
   .vacanciesSection {
     h3 {
       margin-bottom: 100px;
@@ -111,7 +111,7 @@
         row-gap: 40px;
         height: fit-content;
         &:first-child {
-          height: 400px;
+          height: 440px;
           &::after {
             top: 100%;
           }

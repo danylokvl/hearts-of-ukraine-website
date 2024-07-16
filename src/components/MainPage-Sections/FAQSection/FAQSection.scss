@@ -1,0 +1,107 @@
+@use "../../../variables.scss";
+@use "../../../mixins.scss";
+
+.faqSection {
+  padding-bottom: 100px;
+  h2 {
+    font-weight: 500;
+    color: variables.$black;
+  }
+  .faqSection__content {
+    padding: 64px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    .faqSection__card {
+      padding: 0 16px 50px 16px;
+      color: variables.$black;
+      height: 385px;
+      background-color: variables.$grey;
+      @include mixins.displayFlexProps(column, flex-start, space-between);
+      .faqSection__cardNumber {
+        font-size: 80px;
+        font-weight: 700;
+        color: variables.$color-1;
+      }
+      .faqSection__cardBottomContainer {
+        .faqSection__cardQuestion {
+          font-size: 16px;
+          font-weight: 700;
+        }
+        .faqSection__cardAnswer {
+          margin-top: 20px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .faqSection {
+    padding: 0 20px;
+    h2 {
+    }
+    .faqSection__content {
+      column-gap: 20px;
+      row-gap: 20px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      .faqSection__card {
+        .faqSection__cardNumber {
+        }
+        .faqSection__cardBottomContainer {
+          .faqSection__cardQuestion {
+          }
+          .faqSection__cardAnswer {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .faqSection {
+    h2 {
+    }
+    .faqSection__content {
+      column-gap: 20px;
+      row-gap: 20px;
+      .faqSection__card {
+        width: 350px;
+        .faqSection__cardNumber {
+        }
+        .faqSection__cardBottomContainer {
+          .faqSection__cardQuestion {
+          }
+          .faqSection__cardAnswer {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .faqSection {
+    h2 {
+    }
+    .faqSection__content {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      .faqSection__card {
+        width: 100%;
+        .faqSection__cardNumber {
+        }
+        .faqSection__cardBottomContainer {
+          .faqSection__cardQuestion {
+          }
+          .faqSection__cardAnswer {
+          }
+        }
+      }
+    }
+  }
+}
