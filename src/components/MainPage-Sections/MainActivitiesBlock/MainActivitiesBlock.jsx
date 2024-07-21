@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ReactSVG } from "react-svg";
 import "./MainActivitiesBlock.scss";
 
@@ -26,6 +26,9 @@ const MainActivitiesBlock = () => {
             onMouseLeave={() =>
               setCardIsHovered((prevState) => ({ ...prevState, moneyCard: false }))
             }
+            onClick={() => {
+              document.querySelector(".donatePopup").setAttribute("style", "left:0");
+            }}
           >
             <div className="textContainer">
               <h3>Підтримайте нас фінансово</h3>

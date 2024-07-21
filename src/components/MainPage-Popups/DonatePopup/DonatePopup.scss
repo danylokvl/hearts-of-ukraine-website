@@ -1,0 +1,48 @@
+@use "../../../variables.scss";
+@use "../../../mixins.scss";
+
+.donatePopup {
+  .donatePopup__content {
+    padding-top: 44px;
+    h2 {
+      font-weight: 600;
+      color: variables.$color-1;
+    }
+    .donatePopup__cardsContainer {
+      padding-top: 44px;
+      @include mixins.displayFlexProps(row, center, space-between);
+      flex-wrap: wrap;
+      column-gap: 44px;
+      row-gap: 44px;
+      .donatePopup__card {
+        padding: 0px 16px 20px 16px;
+        background-color: variables.$grey;
+        flex: 1;
+        span {
+          font-size: 80px;
+          font-weight: 400;
+          color: variables.$color-1;
+        }
+        ul {
+          list-style: none;
+          margin: 52px 0;
+          li {
+            @include mixins.displayFlexProps(row, center, space-between);
+            margin-bottom: 10px;
+            span {
+              font-size: 16px;
+              color: variables.$black;
+            }
+            .donatePopup__listItemLeft {
+              font-weight: 600;
+              margin-right: auto;
+            }
+            .donatePopup__listItemRight {
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+}
