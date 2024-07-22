@@ -46,7 +46,13 @@ const Header = () => {
           </li>
         </ul>
         <div className="header__buttonsContainer">
-          <PrimaryButton>Внести Кошти</PrimaryButton>
+          <PrimaryButton
+            onClick={() => {
+              document.querySelector(".donatePopup").setAttribute("style", "left: 0");
+            }}
+          >
+            Внести Кошти
+          </PrimaryButton>
           <TextButton
             iconSrc={languageIcon}
             color="#303030"
