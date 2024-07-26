@@ -1,0 +1,10 @@
+@use "../../../mixins.scss";
+
+.closeButton {
+  background-color: unset;
+  @include mixins.displayFlexProps(row, center, unset);
+  column-gap: 8px;
+  span {
+    font-size: 14px;
+  }
+}

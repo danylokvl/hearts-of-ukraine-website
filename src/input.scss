@@ -64,22 +64,60 @@ a {
   }
 }
 
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .mainPagePopup {
   position: fixed;
   top: 0;
   left: 100vw;
   z-index: 9999;
-  min-height: 100vh;
-  overflow-y: auto;
   width: 100vw;
-  background-color: variables.$white;
+  height: 100vh;
   overflow-y: auto;
+  background-color: variables.$white;
   transition: all 0.8s ease;
   [class$="__content"] {
     width: 90vw;
     margin: 0 auto;
     [class$="__buttonContainer"] {
       @include mixins.displayFlexProps(row, center, flex-end);
+      margin-bottom: 44px;
+    }
+  }
+  .donatePopup__messageContainer {
+    position: fixed;
+    bottom: 5%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    span {
+      font-size: 14px;
+    }
+    &.positiveMessage,
+    &.negativeMessage {
+      opacity: 0;
+      animation: fadeInOut 5s backwards;
+    }
+    &.positiveMessage {
+      span {
+        color: variables.$color-1;
+      }
+    }
+    &.negativeMessage {
+      span {
+        color: rgb(204, 14, 14);
+      }
     }
   }
 }

@@ -1,5 +1,6 @@
 @use "../../../variables.scss";
 @use "../../../mixins.scss";
+@use "../../../input.scss";
 
 .donatePopup {
   .donatePopup__content {
@@ -10,14 +11,15 @@
     }
     .donatePopup__cardsContainer {
       padding-top: 44px;
-      @include mixins.displayFlexProps(row, center, space-between);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       flex-wrap: wrap;
-      column-gap: 44px;
-      row-gap: 44px;
+      column-gap: 24px;
+      row-gap: 24px;
+      height: fit-content;
       .donatePopup__card {
         padding: 0px 16px 20px 16px;
         background-color: variables.$grey;
-        flex: 1;
         span {
           font-size: 80px;
           font-weight: 400;
@@ -42,6 +44,24 @@
             }
           }
         }
+        .donatePopup__copyButtonContainer {
+          width: 100%;
+          text-align: end;
+          button {
+            margin-left: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .donatePopup {
+    .donatePopup__content {
+      .donatePopup__cardsContainer {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
       }
     }
   }

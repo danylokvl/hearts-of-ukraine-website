@@ -28,6 +28,7 @@ const MainActivitiesBlock = () => {
             }
             onClick={() => {
               document.querySelector(".donatePopup").setAttribute("style", "left:0");
+              document.body.style.overflow = "hidden";
             }}
           >
             <div className="textContainer">

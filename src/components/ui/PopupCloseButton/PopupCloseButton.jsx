@@ -7,6 +7,7 @@ const CloseButton = ({ classProp }) => {
       className="closeButton"
       onClick={() => {
         document.querySelector(`.${classProp}`).setAttribute("style", "left: 100vw");
+        document.body.style.overflow = "auto";
       }}
     >
       <span>закрити</span>
