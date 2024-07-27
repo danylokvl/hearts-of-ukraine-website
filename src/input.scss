@@ -89,35 +89,15 @@ a {
   [class$="__content"] {
     width: 90vw;
     margin: 0 auto;
+    padding-top: 44px;
+
+    h2 {
+      font-weight: 600;
+      color: variables.$color-1;
+    }
     [class$="__buttonContainer"] {
       @include mixins.displayFlexProps(row, center, flex-end);
       margin-bottom: 44px;
-    }
-  }
-  .donatePopup__messageContainer {
-    position: fixed;
-    bottom: 5%;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    span {
-      font-size: 14px;
-    }
-    &.positiveMessage,
-    &.negativeMessage {
-      opacity: 0;
-      animation: fadeInOut 5s backwards;
-    }
-    &.positiveMessage {
-      span {
-        color: variables.$color-1;
-      }
-    }
-    &.negativeMessage {
-      span {
-        color: rgb(204, 14, 14);
-      }
     }
   }
 }

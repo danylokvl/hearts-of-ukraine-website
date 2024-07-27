@@ -59,6 +59,9 @@ const MainActivitiesBlock = () => {
             onMouseLeave={() =>
               setCardIsHovered((prevState) => ({ ...prevState, volunteerCard: false }))
             }
+            onClick={() =>
+              document.querySelector(".becomeVolunteerPopup").setAttribute("style", "left: 0")
+            }
           >
             <div className="textContainer">
               <h3>Станьте одним з нас</h3>

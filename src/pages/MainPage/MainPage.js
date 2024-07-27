@@ -1,3 +1,4 @@
+import BecomeVolunteerPopup from "../../components/MainPage-Popups/BecomeVolunteerPopup/BecomeVolunteerPopup";
 import DonatePopup from "../../components/MainPage-Popups/DonatePopup/DonatePopup";
 import AboutUsSection from "../../components/MainPage-Sections/AboutUsSection/AboutUsSection";
 import BenefactorsSection from "../../components/MainPage-Sections/BenefactorsSection/BenefactorsSection";
@@ -14,6 +15,7 @@ const MainPage = () => {
     <section className="mainPage">
       {/*Main Page Popups*/}
       <DonatePopup />
+      <BecomeVolunteerPopup />
 
       <HeroSection />
       <MainActivitiesBlock />

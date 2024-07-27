@@ -43,7 +43,7 @@ const DonatePopup = () => {
         <div className="donatePopup__buttonContainer">
           <PopupCloseButton classProp="donatePopup" />
         </div>
-        <h2>Внесення коштів</h2>
+        <h2>Банківські рахунки</h2>
         <div className="donatePopup__cardsContainer">
           <div className="donatePopup__card">
             <span>₴ UAH</span>
