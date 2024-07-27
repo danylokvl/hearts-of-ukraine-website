@@ -2,41 +2,23 @@
   .becomeVolunteerPopup__content {
     .becomeVolunteerPopup__form {
       padding: 44px 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto 1fr 1fr;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
       gap: 44px;
-      font-family: "Manrope" !important;
 
-      #nameTextField {
-        grid-column: 1 / 2;
+      .mainPagePopup__textField {
+        width: 100%;
       }
 
-      #phoneNumberTextField {
-        grid-column: 2 / 3;
-      }
-
-      #countryTextField {
-        grid-column: 1 / 2;
-        grid-row: 2;
-      }
-
-      #cityTextField {
-        grid-column: 2 / 3;
-        grid-row: 2;
-      }
-
-      #summaryTextField {
-        grid-column: 1 / span 2;
-        grid-row: 3;
-      }
-
-      #becomeVolunteerBtn {
-        grid-column: 2 / 3;
-        grid-row: 4;
-        max-width: fit-content;
-        margin-left: auto;
-        margin-top: auto;
+      .becomeVolunteerPopup__btnContainer {
+        p {
+          font-size: 12px;
+          margin-bottom: 16px;
+        }
+        text-align: center;
+        width: fit-content;
+        margin: 44px auto 0 auto;
       }
     }
   }
