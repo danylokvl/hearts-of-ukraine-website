@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import TextField from "@mui/material/TextField";
 import PrimaryButton from "../../ui/PrimaryButton/PrimaryButton";
 import PopupCloseButton from "../../ui/PopupCloseButton/PopupCloseButton";
 import "./BecomeVolunteerPopup.scss";
+import "../MainPagePopups.scss";
 import { DATA } from "../../../DATA";
 
 const BecomeVolunteerPopup = () => {
+  const [errorOccured, setErrorOccured] = useState(false);
+  const [formIsSent, setFormIsSent] = useState(false);
   const [volunteerData, setVolunteerData] = useState({
     name: "",
     phoneNumber: "",
@@ -15,21 +18,44 @@ const BecomeVolunteerPopup = () => {
     summary: "",
   });
 
+  useEffect(() => {
+    const messageContainer = document.querySelector(".becomeVolunteerPopup__messageContainer");
+    if (errorOccured) {
+      messageContainer.classList.add("negativeMessage");
+    } else if (formIsSent) messageContainer.classList.add("positiveMessage");
+    setTimeout(() => {
+      messageContainer.classList.remove(
+        `${errorOccured ? "negativeMessage" : formIsSent ? "positiveMessage" : null}`
+      );
+      setErrorOccured(false);
+    }, 7000);
+    return () => {
+      clearTimeout();
+    };
+  }, [errorOccured, formIsSent]);
+
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await emailjs
-      .send(DATA.service_id, DATA.template_id, volunteerData, DATA.user_id)
-      .finally(() =>
-        setVolunteerData({
-          name: "",
-          phoneNumber: "",
-          email: "",
-          city: "",
-          summary: "",
-        })
-      );
-
-    console.log(response);
+    if (volunteerData.name === "" || volunteerData.phoneNumber === "") {
+      setErrorOccured(true);
+      return;
+    }
+    try {
+      const response = await emailjs
+        .send(DATA.service_id, DATA.template_id, volunteerData, DATA.user_id)
+        .finally(() => {
+          setVolunteerData({
+            name: "",
+            phoneNumber: "",
+            email: "",
+            city: "",
+            summary: "",
+          });
+          setFormIsSent(true);
+        });
+    } catch (error) {
+      setErrorOccured(true);
+    }
   }
 
   return (
@@ -76,7 +102,6 @@ const BecomeVolunteerPopup = () => {
             label="Ваш Email"
             variant="standard"
             autoComplete="off"
-            required
             value={volunteerData.email}
             onChange={(e) =>
               setVolunteerData((prevVolunteerData) => ({
@@ -115,6 +140,18 @@ const BecomeVolunteerPopup = () => {
             }
           />
           <div className="becomeVolunteerPopup__btnContainer">
+            <div
+              className="becomeVolunteerPopup__messageContainer"
+              id="volunteerFormMessageContainer"
+            >
+              <span>
+                {errorOccured
+                  ? "Щось пішло не так, заповніть форму та спробуйте ще раз"
+                  : formIsSent && volunteerData.name !== ""
+                  ? "Ваші дані надіслано, очікуйте на зворотній зв'язок"
+                  : "message"}
+              </span>
+            </div>
             <p>
               Натискаючи на кнопку “СТАТИ ВОЛОНТЕРОМ” ви надаєте згоду на обробку ваших персональних
               даних

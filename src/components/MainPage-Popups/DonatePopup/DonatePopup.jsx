@@ -1,4 +1,5 @@
 import "./DonatePopup.scss";
+import "../MainPagePopups.scss";
 import copyIcon from "../../../assets/icons/copy-24px-black.svg";
 import PopupCloseButton from "../../ui/PopupCloseButton/PopupCloseButton";
 import { useEffect, useState } from "react";
@@ -28,12 +29,12 @@ const DonatePopup = () => {
       setTimeout(() => {
         setIbanCopied(false);
         messageContainer.classList.remove("positiveMessage");
-      }, 5000);
+      }, 7000);
     } else if (errorOccured) {
       messageContainer.classList.add("negativeMessage");
       setTimeout(() => {
         messageContainer.classList.remove("negativeMessage");
-      }, 5000);
+      }, 7000);
     }
   }, [ibanCopied]);
 
@@ -126,7 +127,7 @@ const DonatePopup = () => {
           </div>
         </div>
       </div>
-      <div className="donatePopup__messageContainer">
+      <div className="donatePopup__messageContainer" id="ibanCopyMessageContainer">
         <span>{ibanCopied ? "IBAN Скопійовано" : "IBAN не скопійовано, спробуйте ще раз"}</span>
       </div>
     </section>
