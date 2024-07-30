@@ -33,8 +33,9 @@
       color: variables.$color-1;
     }
 
-    .becomeVolunteerPopup__messageContainer,
-    .donatePopup__messageContainer {
+    .volunteerForm__messageContainer,
+    .donatePopup__messageContainer,
+    .needHelpForm__messageContainer {
       margin-bottom: 16px;
       span {
         font-size: 14px;

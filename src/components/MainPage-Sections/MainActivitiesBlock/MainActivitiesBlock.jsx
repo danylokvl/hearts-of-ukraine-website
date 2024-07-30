@@ -91,6 +91,9 @@ const MainActivitiesBlock = () => {
             onMouseLeave={() =>
               setCardIsHovered((prevState) => ({ ...prevState, needHelpCard: false }))
             }
+            onClick={() =>
+              document.querySelector(".needHelpPopup").setAttribute("style", "left: 0")
+            }
           >
             <div className="textContainer">
               <h3>Ми вас підтримаємо</h3>

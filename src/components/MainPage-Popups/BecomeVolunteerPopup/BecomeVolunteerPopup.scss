@@ -1,24 +1,8 @@
 .becomeVolunteerPopup {
   .becomeVolunteerPopup__content {
     .becomeVolunteerPopup__form {
-      padding: 44px 0;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 44px;
-
       .mainPagePopup__textField {
-        width: 100%;
-      }
-
-      .becomeVolunteerPopup__btnContainer {
-        p {
-          font-size: 12px;
-          margin-bottom: 16px;
-        }
-        text-align: center;
-        width: fit-content;
-        margin: 44px auto 0 auto;
+        //  width: 100%;
       }
     }
   }
