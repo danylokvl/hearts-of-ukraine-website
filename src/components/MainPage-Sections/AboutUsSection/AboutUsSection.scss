@@ -2,7 +2,6 @@
 @use "../../../mixins.scss";
 
 .aboutUsSection {
-  position: relative;
   .aboutUsSection__content {
     h2,
     p {
@@ -27,29 +26,18 @@
       h3 {
         font-weight: 400;
       }
-      .aboutUsSection__horizontalScrollContainer {
-        position: relative;
-        width: 100vw;
-        height: 40vh;
-        overflow-x: hidden;
-        @include mixins.displayFlexProps(row, center, flex-start);
-        flex-wrap: nowrap;
-        display: block;
-        column-gap: 20px;
-        .aboutUsSection__imagesContainer {
-          position: absolute;
-          width: auto;
-          height: fit-content;
-          padding-top: 40px;
-          height: 100%;
-          @include mixins.displayFlexProps(row, flex-end, flex-start);
-          flex-wrap: nowrap;
-          column-gap: 20px;
 
-          img {
-            height: 100%;
-            max-height: 100%;
-          }
+      .aboutUsSection__imagesContainer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 400px);
+        grid-template-rows: repeat(3, 400px);
+        gap: 20px;
+        justify-content: center;
+        overflow-x: hidden;
+        img {
+          width: 400px;
+          height: 400px;
         }
       }
     }
@@ -62,14 +50,43 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .aboutUsSection {
     padding: 350px 20px 0 20px;
+
+    .aboutUsSection__content {
+      .aboutUsSection__bottomContainer {
+        .aboutUsSection__imagesContainer {
+          grid-template-columns: 400px 400px;
+        }
+      }
+    }
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 769px) {
   .aboutUsSection {
     padding-top: 200px;
+    .aboutUsSection__content {
+      .aboutUsSection__bottomContainer {
+        .aboutUsSection__imagesContainer {
+          grid-template-columns: 400px 400px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .aboutUsSection {
+    padding-top: 200px;
+
+    .aboutUsSection__content {
+      .aboutUsSection__bottomContainer {
+        .aboutUsSection__imagesContainer {
+          grid-template-columns: 400px;
+        }
+      }
+    }
   }
 }

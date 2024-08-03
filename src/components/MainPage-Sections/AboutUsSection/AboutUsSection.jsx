@@ -1,17 +1,19 @@
-import "./AboutUsSection.scss";
-import girlNearTankImage from "../../../assets/images/girl-near-tank.jpg";
-import ruinsImage from "../../../assets/images/ruins.jpg";
-import strikeImage from "../../../assets/images/strike.jpg";
-import damagedTankImage from "../../../assets/images/damaged-tank.jpg";
-import damagedTankImage2 from "../../../assets/images/damaged-tank-2.jpg";
+import Slider from "react-slick";
 
-const imagesArray = [
-  girlNearTankImage,
-  ruinsImage,
-  strikeImage,
-  damagedTankImage,
-  damagedTankImage2,
-];
+import "./AboutUsSection.scss";
+import ArrowButton from "../../ui/ArrowButton/ArrowButton";
+import img1 from "../../../assets/images/fondImages/1.jpg";
+import img2 from "../../../assets/images/fondImages/2.jpg";
+import img3 from "../../../assets/images/fondImages/3.jpg";
+import img4 from "../../../assets/images/fondImages/4.jpg";
+import img5 from "../../../assets/images/fondImages/5.jpg";
+import img6 from "../../../assets/images/fondImages/6.jpg";
+import img7 from "../../../assets/images/fondImages/7.jpg";
+import img8 from "../../../assets/images/fondImages/8.jpg";
+import img9 from "../../../assets/images/fondImages/9.jpg";
+import img10 from "../../../assets/images/fondImages/10.jpg";
+
+const imagesArray = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
 const AboutUsSection = () => {
   return (
@@ -42,14 +44,10 @@ const AboutUsSection = () => {
             життя. У цій ситуації благодійні фонди стають справжнім рятівним кругом для тих, хто
             потребує допомоги.
           </p>
-          <div className="aboutUsSection__horizontalScrollContainer">
-            <div className="aboutUsSection__imagesContainer">
-              {imagesArray.map((image, index) => {
-                return (
-                  <img src={image} alt={`image ${index}`} key={index + Math.random() * 1000} />
-                );
-              })}
-            </div>
+          <div className="aboutUsSection__imagesContainer">
+            {imagesArray.map((image, index) => {
+              return <img src={image} alt={`image ${index}`} key={index + Math.random() * 1000} />;
+            })}
           </div>
         </div>
       </div>
