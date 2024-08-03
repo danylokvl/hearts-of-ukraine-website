@@ -5,7 +5,7 @@ import img3 from "../../../assets/images/heroSection-img3.png";
 
 const HeroSection = () => {
   return (
-    <section className="heroSection">
+    <section className="heroSection" id="heroSection">
       <div className="heroSection__content">
         <div className="heroSection__imagesContainer">
           <img src={img2} alt="soldier image" id="soldierImage" />

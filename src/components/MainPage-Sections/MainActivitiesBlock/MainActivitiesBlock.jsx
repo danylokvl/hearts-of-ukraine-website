@@ -14,8 +14,13 @@ const MainActivitiesBlock = () => {
     needHelpCard: false,
   });
 
+  function handleCardClick(className) {
+    document.querySelector(className).setAttribute("style", "left:0");
+    document.body.style.overflow = "hidden";
+  }
+
   return (
-    <section className="mainActivitiesBlock">
+    <section className="mainActivitiesBlock" id="mainActivitiesBlock">
       <div className="mainActivitiesBlock__content">
         <div className="mainActivitiesBlock__cardsContainer">
           <div
@@ -26,10 +31,7 @@ const MainActivitiesBlock = () => {
             onMouseLeave={() =>
               setCardIsHovered((prevState) => ({ ...prevState, moneyCard: false }))
             }
-            onClick={() => {
-              document.querySelector(".donatePopup").setAttribute("style", "left:0");
-              document.body.style.overflow = "hidden";
-            }}
+            onClick={() => handleCardClick(".donatePopup")}
           >
             <div className="textContainer">
               <h3>Підтримайте нас фінансово</h3>
@@ -59,9 +61,7 @@ const MainActivitiesBlock = () => {
             onMouseLeave={() =>
               setCardIsHovered((prevState) => ({ ...prevState, volunteerCard: false }))
             }
-            onClick={() =>
-              document.querySelector(".becomeVolunteerPopup").setAttribute("style", "left: 0")
-            }
+            onClick={() => handleCardClick(".becomeVolunteerPopup")}
           >
             <div className="textContainer">
               <h3>Станьте одним з нас</h3>
@@ -91,9 +91,7 @@ const MainActivitiesBlock = () => {
             onMouseLeave={() =>
               setCardIsHovered((prevState) => ({ ...prevState, needHelpCard: false }))
             }
-            onClick={() =>
-              document.querySelector(".needHelpPopup").setAttribute("style", "left: 0")
-            }
+            onClick={() => handleCardClick(".needHelpPopup")}
           >
             <div className="textContainer">
               <h3>Ми вас підтримаємо</h3>

@@ -3,6 +3,7 @@ import cellIcon from "../../assets/icons/cell-24px-white.svg";
 import mailICon from "../../assets/icons/mail-24px-white.svg";
 import northEastIcon from "../../assets/icons/northEast-24px-white.svg";
 import pdfIcon from "../../assets/icons/pdf-24px-white.svg";
+import docs from "../../assets/docs/Odpis_Aktualny_KRS_0001109149.pdf";
 
 const Footer = () => {
   return (
@@ -34,13 +35,16 @@ const Footer = () => {
           <h4>Посилання</h4>
           <ul>
             <li>
-              <a>
+              <a
+                href="https://www.facebook.com/share/WXtJ8o9QdM69rZGL/?mibextid=LQQJ4d"
+                target="_blank"
+              >
                 <span>Facebook</span>
                 <img src={northEastIcon} alt="link to facebook" />
               </a>
             </li>
             <li>
-              <a>
+              <a href="https://www.instagram.com/heartscomua?igsh=b2dtb2pxdzAzNmdi" target="_blank">
                 <span>Instagram</span>
                 <img src={northEastIcon} alt="link to instagram" />
               </a>
@@ -51,9 +55,9 @@ const Footer = () => {
           <h4>Документи</h4>
           <ul>
             <li>
-              <a>
+              <a href={docs} target="_blank">
                 <img src={pdfIcon} alt="pdf" />
-                <span>Установчі Документи</span>
+                <span>Установчі Документи (PL)</span>
               </a>
             </li>
           </ul>

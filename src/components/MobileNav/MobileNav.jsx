@@ -24,23 +24,11 @@ const MobileNav = ({ burgerMenuIsOpen, setBurgerMenuIsOpen }) => {
           <a>Засновники</a>
         </li>
         <li>
-          <a>Новини</a>
-        </li>
-        <li>
           <a>FAQ</a>
-        </li>
-        <li>
-          <a>Отримати Допомогу</a>
-        </li>
-        <li>
-          <a>Стати Волонтером</a>
         </li>
       </ul>
       <div className="header__buttonsContainer">
         <PrimaryButton>Внести Кошти</PrimaryButton>
-        <TextButton iconSrc={languageIcon} color={"#ffff"} additionalStyles={{ paddingTop: "2px" }}>
-          UKR
-        </TextButton>
       </div>
     </nav>
   );

@@ -12,6 +12,12 @@
   }
 }
 
+a:link,
+a:visited {
+  color: unset;
+  text-decoration: none;
+}
+
 article,
 aside,
 details,
@@ -32,6 +38,7 @@ body {
   letter-spacing: 1px;
   font-style: normal;
   line-height: normal;
+  overflow-x: hidden;
 }
 
 h1 {

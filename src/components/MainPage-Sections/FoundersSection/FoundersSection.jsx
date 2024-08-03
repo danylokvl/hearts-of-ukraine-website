@@ -4,7 +4,7 @@ import yevhenImage from "../../../assets/images/YevhenSavchenko.png";
 
 const FoundersSection = () => {
   return (
-    <section className="foundersSection">
+    <section className="foundersSection" id="foundersSection">
       <h2>Засновники</h2>
       <div className="foundersSection__content">
         <div className="foundersSection__founderContainer">

@@ -2,7 +2,7 @@ import "./WhyUsSection.scss";
 
 const WhyUsSection = () => {
   return (
-    <section className="whyUsSection">
+    <section className="whyUsSection" id="whyUsSection">
       <div className="whyUsSection__content">
         <h3>Чому нам довіряють</h3>
         <div className="whyUsSection__featureContainer">

@@ -5,7 +5,7 @@ import peopleIconBig from "../../../assets/icons/peopleIcon-big.svg";
 
 const VacanciesSection = () => {
   return (
-    <section className="vacanciesSection">
+    <section className="vacanciesSection" id="vacanciesSection">
       <h3>Хто нам потрібен</h3>
       <div className="vacanciesSection__content">
         <div className="vacanciesSection__vacancyContainer">

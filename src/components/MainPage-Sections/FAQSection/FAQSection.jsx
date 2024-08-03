@@ -2,7 +2,7 @@ import "./FAQSection.scss";
 
 const FAQSection = () => {
   return (
-    <section className="faqSection">
+    <section className="faqSection" id="faqSection">
       <h2>FAQ</h2>
       <div className="faqSection__content">
         <div className="faqSection__card">

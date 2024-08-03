@@ -1,6 +1,15 @@
 @use "../../../variables.scss";
 @use "../../../mixins.scss";
 
+@keyframes horizontalScrollAnimation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .aboutUsSection {
   position: relative;
   .aboutUsSection__content {
@@ -30,28 +39,35 @@
       .aboutUsSection__horizontalScrollContainer {
         position: relative;
         transform: translateX(-10vw);
-        width: 120vw;
+        width: 200vw;
         height: 40vh;
-        overflow-x: hidden; //change later
+        overflow-x: hidden;
         right: -10vw;
         left: -10vw;
         @include mixins.displayFlexProps(row, center, flex-start);
-        display: none; //change later
+        flex-wrap: nowrap;
+        display: block;
         column-gap: 20px;
+        animation: horizontalScrollAnimation 20s linear infinite;
         .aboutUsSection__imagesContainer {
           position: absolute;
-          width: 100%;
+          width: auto;
           height: fit-content;
           padding-top: 40px;
           height: 100%;
           @include mixins.displayFlexProps(row, flex-end, flex-start);
           flex-wrap: nowrap;
           column-gap: 20px;
-          transition: transform 5s ease-out;
+          // transition: transform 5s ease-out;
+
           img {
+            height: 100%;
             max-height: 100%;
           }
+          &:first-child {
+          }
           &:last-child {
+            left: 52%;
           }
         }
       }

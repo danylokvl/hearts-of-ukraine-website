@@ -46,7 +46,7 @@ const AboutUsSection = () => {
   }, []);*/
 
   return (
-    <section className="aboutUsSection">
+    <section className="aboutUsSection" id="aboutUsSection">
       <div className="aboutUsSection__content">
         <div className="aboutUsSection__topContainer">
           <h2>Про нас</h2>
@@ -74,13 +74,6 @@ const AboutUsSection = () => {
             потребує допомоги.
           </p>
           <div className="aboutUsSection__horizontalScrollContainer">
-            <div className="aboutUsSection__imagesContainer">
-              {imagesArray.map((image, index) => {
-                return (
-                  <img src={image} alt={`image ${index}`} key={index + Math.random() * 1000} />
-                );
-              })}
-            </div>
             <div className="aboutUsSection__imagesContainer">
               {/*imagesArray.map((image, index) => {
                 return (
