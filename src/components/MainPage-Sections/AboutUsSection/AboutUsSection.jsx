@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "./AboutUsSection.scss";
 import girlNearTankImage from "../../../assets/images/girl-near-tank.jpg";
 import ruinsImage from "../../../assets/images/ruins.jpg";
@@ -15,36 +14,6 @@ const imagesArray = [
 ];
 
 const AboutUsSection = () => {
-  /* useEffect(() => {
-    const imagesContainers = document.querySelectorAll(".aboutUsSection__imagesContainer");
-    let translateXAmount = 0;
-    const imagesContainerWidth = imagesContainers[0].getBoundingClientRect().width;
-    const firstImagesContainerRight = imagesContainers[0].getBoundingClientRect().right;
-    const secondImagesContainerRight = imagesContainers[1].getBoundingClientRect().right;
-
-    function MoveImagesHorizontal() {
-      imagesContainers[0].style.transform = `translateX(-${translateXAmount}px)`;
-      imagesContainers[1].style.transform = `translateX(-${translateXAmount}px)`;
-      translateXAmount += 100;
-
-      if (imagesContainers[0].getBoundingClientRect().right <= 0) {
-        imagesContainers[0].setAttribute(
-          "style",
-          "transition: all 0s; transform: translateX(120vw)"
-        );
-        setTimeout(() => {
-          imagesContainers[0].removeAttribute("style");
-        }, 1000);
-      } else if (imagesContainers[0].getBoundingClientRect().right <= 0) {
-        imagesContainers[1].style.transform = `translateX(${imagesContainerWidth}px)`;
-      }
-    }
-
-    setInterval(MoveImagesHorizontal, 1000);
-
-    return () => clearInterval();
-  }, []);*/
-
   return (
     <section className="aboutUsSection" id="aboutUsSection">
       <div className="aboutUsSection__content">
@@ -75,11 +44,11 @@ const AboutUsSection = () => {
           </p>
           <div className="aboutUsSection__horizontalScrollContainer">
             <div className="aboutUsSection__imagesContainer">
-              {/*imagesArray.map((image, index) => {
+              {imagesArray.map((image, index) => {
                 return (
                   <img src={image} alt={`image ${index}`} key={index + Math.random() * 1000} />
                 );
-              })*/}
+              })}
             </div>
           </div>
         </div>

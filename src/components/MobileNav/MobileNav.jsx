@@ -4,7 +4,7 @@ import TextButton from "../ui/TextButton/TextButton";
 import languageIcon from "../../assets/icons/language-24px-black.svg";
 import closeIcon from "../../assets/icons/close-24px-black.svg";
 
-const MobileNav = ({ burgerMenuIsOpen, setBurgerMenuIsOpen }) => {
+const MobileNav = ({ burgerMenuIsOpen, setBurgerMenuIsOpen, handleLinkOnClick }) => {
   return (
     <nav className="mobileNav" style={burgerMenuIsOpen ? { left: "0px" } : {}}>
       <TextButton
@@ -18,17 +18,55 @@ const MobileNav = ({ burgerMenuIsOpen, setBurgerMenuIsOpen }) => {
       </TextButton>
       <ul className="header__linksList">
         <li>
-          <a>Про Нас</a>
+          <a
+            onClick={() => {
+              setBurgerMenuIsOpen(false);
+              handleLinkOnClick("aboutUsSection");
+            }}
+          >
+            Про Нас
+          </a>
         </li>
         <li>
-          <a>Засновники</a>
+          <a
+            onClick={() => {
+              setBurgerMenuIsOpen(false);
+              handleLinkOnClick("foundersSection");
+            }}
+          >
+            Засновники
+          </a>
         </li>
         <li>
-          <a>FAQ</a>
+          <a
+            onClick={() => {
+              setBurgerMenuIsOpen(false);
+              handleLinkOnClick("benefactorsSection");
+            }}
+          >
+            Благодійники
+          </a>
+        </li>
+        <li>
+          <a
+            onClick={() => {
+              setBurgerMenuIsOpen(false);
+              handleLinkOnClick("faqSection");
+            }}
+          >
+            FAQ
+          </a>
         </li>
       </ul>
       <div className="header__buttonsContainer">
-        <PrimaryButton>Внести Кошти</PrimaryButton>
+        <PrimaryButton
+          onClick={() => {
+            setBurgerMenuIsOpen(false);
+            document.querySelector(".donatePopup").setAttribute("style", "left: 0");
+          }}
+        >
+          Внести Кошти
+        </PrimaryButton>
       </div>
     </nav>
   );

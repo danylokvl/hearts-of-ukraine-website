@@ -9,11 +9,6 @@ import MobileNav from "../MobileNav/MobileNav";
 
 const Header = () => {
   const [burgerMenuIsOpen, setBurgerMenuIsOpen] = useState(false);
-
-  const heroSection = document.getElementById("heroSection");
-
-  console.log(heroSection);
-
   function handleLinkOnClick(id) {
     const elementById = document.getElementById(id);
     elementById.scrollIntoView({ behavior: "smooth" });
@@ -21,7 +16,11 @@ const Header = () => {
 
   return (
     <header>
-      <MobileNav burgerMenuIsOpen={burgerMenuIsOpen} setBurgerMenuIsOpen={setBurgerMenuIsOpen} />
+      <MobileNav
+        burgerMenuIsOpen={burgerMenuIsOpen}
+        setBurgerMenuIsOpen={setBurgerMenuIsOpen}
+        handleLinkOnClick={handleLinkOnClick}
+      />
       <nav className="header__nav">
         <button
           className="header__burgerMenuButton"
@@ -29,7 +28,7 @@ const Header = () => {
         >
           <img src={burgerMenuIsOpen ? closeIcon : burgerMenuIcon} />
         </button>
-        <a className="header__logo" onClick={() => handleLinkOnClick("heroSection")}>
+        <a className="header__logo" onClick={() => window.location.replace(window.location.href)}>
           <img src={logo} />
         </a>
         <ul className="header__linksList">

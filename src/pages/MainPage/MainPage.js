@@ -1,4 +1,3 @@
-import BecomeVolunteerPopup from "../../components/MainPage-Popups/BecomeVolunteerPopup/BecomeVolunteerPopup";
 import DonatePopup from "../../components/MainPage-Popups/DonatePopup/DonatePopup";
 import FormPopup from "../../components/MainPage-Popups/FormPopup/FormPopup";
 import AboutUsSection from "../../components/MainPage-Sections/AboutUsSection/AboutUsSection";
